@@ -1,0 +1,115 @@
+.buy {
+  min-height: 818px;
+  padding-top: 50px;
+  padding-bottom: 148px;
+  background: linear-gradient(180deg, rgb(49, 137, 17), rgb(20, 63, 4) 86.5%);
+  position: relative;
+  color: var(--white);
+  text-transform: uppercase;
+  @media screen and (max-width: 768px) {
+    min-height: 914px;
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+
+  &::before {
+    content: url("../public/img/buy/buy_stroke.png");
+    position: absolute;
+    top: 168px;
+    right: 0;
+    mix-blend-mode: overlay;
+
+    @media screen and (max-width: 768px) {
+      content: url("../public/img/buy/buy_stroke_mobile.png");
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  &::after {
+    content: url("../public/img/buy/buy_img.png");
+    position: absolute;
+    top: -67px;
+    right: 0;
+    @media screen and (max-width: 768px) {
+      content: url("../public/img/buy/buy_img_mobile.png");
+      top: auto;
+      bottom: -6px;
+    }
+  }
+}
+
+.buy__title {
+  font-size: 60px;
+  line-height: 105%;
+  @media screen and (max-width: 768px) {
+    font-size: 34px;
+  }
+}
+
+.buy__subitle {
+  font-size: 24px;
+  line-height: 105%;
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.buy__steps {
+  max-width: 502px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @media screen and (max-width: 768px) {
+    margin-top: 31px;
+    gap: 30px;
+  }
+}
+
+.step__title {
+  margin-bottom: 7px;
+  padding-left: 32px;
+  font-size: 26px;
+  line-height: 105%;
+  position: relative;
+  @media screen and (max-width: 768px) {
+    padding-left: 20px;
+    font-size: 22px;
+  }
+
+  &::before {
+    content: url("../public/img/buy/buy_mark.png");
+    position: absolute;
+    top: -4px;
+    left: 0;
+    mix-blend-mode: overlay;
+    @media screen and (max-width: 768px) {
+      left: -10px;
+    }
+  }
+}
+
+.step__text {
+  font-size: 22px;
+  line-height: 125%;
+  color: rgba(255, 255, 255, 0.6);
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.step__text-accent {
+  position: relative;
+  color: rgba(255, 255, 255, 0.9);
+
+  &::before {
+    content: url("../public/img/buy/buy_accent_bg.png");
+    position: absolute;
+    bottom: -9px;
+    mix-blend-mode: overlay;
+    @media screen and (max-width: 768px) {
+      content: url("../public/img/buy/buy_accent_mobile.png");
+    }
+  }
+}
