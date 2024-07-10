@@ -538,6 +538,8 @@ body {
 @media screen and (max-width: 540px) {
   .about__container {
     padding-right: 0;
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
@@ -556,7 +558,10 @@ body {
 }
 @media screen and (max-width: 540px) {
   .about__title {
-    margin-right: 20px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    translate: -50% 0;
   }
 }
 
@@ -620,17 +625,20 @@ body {
   display: flex;
   gap: 40px;
 }
+@media screen and (max-width: 1340px) {
+  .about__toggler {
+    margin-top: 20px;
+  }
+}
 @media screen and (max-width: 540px) {
   .about__toggler {
+    margin-top: 0;
+    margin-bottom: 42px;
+    padding-top: 95px;
     overflow: scroll;
   }
   .about__toggler::-webkit-scrollbar {
     width: 0;
-  }
-}
-@media screen and (max-width: 1340px) {
-  .about__toggler {
-    margin-top: 20px;
   }
 }
 .about__toggler button {
@@ -649,7 +657,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  border: 6px solid #ccc;
+  border: 5px solid #6f6f6f;
   border-radius: 50%;
   background-color: transparent;
 }
@@ -657,7 +665,7 @@ body {
   border-radius: 50%;
 }
 .about__toggler button.active:after {
-  border: 6px solid #d8b696;
+  border: 5px solid #d8b696;
 }
 
 .person__right {
@@ -876,16 +884,11 @@ body {
   .tokenomics__code .code__copy #copy {
     font-size: 14px;
     top: 0;
-    translate: -50% 50%;
+    translate: -50% 100%;
   }
 }
 .tokenomics__code .code__copy .copy__bg {
   mix-blend-mode: overlay;
-}
-@media screen and (max-width: 768px) {
-  .tokenomics__code .code__copy .copy__bg {
-    translate: 0 -20%;
-  }
 }
 
 .tokenomics__total {
@@ -987,6 +990,7 @@ body {
 @media screen and (max-width: 768px) {
   .roadmap__title {
     margin-bottom: 30px;
+    text-align: center;
     font-size: 42px;
   }
 }

@@ -156,15 +156,11 @@
       @media screen and (max-width: 768px) {
         font-size: 14px;
         top: 0;
-        translate: -50% 50%;
+        translate: -50% 100%;
       }
     }
     .copy__bg {
       mix-blend-mode: overlay;
-
-      @media screen and (max-width: 768px) {
-        translate: 0 -20%;
-      }
     }
   }
 }

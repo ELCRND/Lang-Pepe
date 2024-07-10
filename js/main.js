@@ -24,7 +24,6 @@ document.querySelectorAll(".menu__link").forEach((link) =>
 // переключение контента в блоке about
 toggleBtns.forEach((btn) =>
   btn.addEventListener("click", (e) => {
-    console.log(e.target.parentNode.parentNode);
     const contentType =
       e.target.getAttribute("data-type") ||
       e.target.parentNode.parentNode.getAttribute("data-type");
