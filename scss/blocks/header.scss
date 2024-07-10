@@ -1,10 +1,18 @@
 .header {
   width: 100%;
   height: 88px;
+  padding-left: 20px;
+  padding-right: 20px;
   position: absolute;
   top: 26px;
   left: 0;
   z-index: 10;
+  @media screen and (max-width: 768px) {
+    height: 56px;
+    padding-left: 15px;
+    padding-right: 15px;
+    top: 19px;
+  }
 }
 
 .header__container {
@@ -16,14 +24,25 @@
   padding-right: 29px;
   display: flex;
   align-items: center;
+  border-radius: 10px;
   background-image: url("../public/img/header/header_bg.png");
-  background-size: contain;
-  background-position: center;
+  background-size: cover;
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 .header__navigation {
   margin-left: 144px;
   margin-right: 35px;
+
+  @media screen and (max-width: 1180px) {
+    margin-left: 35px;
+  }
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
 }
 
 .navigation {
@@ -32,6 +51,9 @@
   font-size: 20px;
   line-height: 105%;
   text-transform: uppercase;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
 
   a {
     transition: color 200ms ease;
@@ -57,7 +79,94 @@
   color: #000;
   transition: background-color 200ms ease;
 
+  @media screen and (max-width: 1180px) {
+    margin-left: auto;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
   &:hover {
     background: #ccc;
   }
+}
+
+.header__logo {
+  z-index: 5;
+  @media screen and (max-width: 768px) {
+    scale: 0.75;
+  }
+}
+
+.header__menu-btn {
+  margin-left: auto;
+  display: none;
+  flex-direction: column;
+  align-items: end;
+  gap: 3px;
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  z-index: 5;
+
+  translate: 0 -50%;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
+
+  div {
+    width: 16px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 200ms ease;
+    &:first-of-type {
+      width: 23px;
+    }
+  }
+}
+
+.header__menu-btn.close {
+  div {
+    &:first-of-type {
+      rotate: 45deg;
+      translate: 4px 2px;
+    }
+    &:last-of-type {
+      width: 23px;
+      rotate: -45deg;
+      translate: 4px -4px;
+    }
+  }
+}
+
+.header__menu {
+  width: 100%;
+  height: calc(100vh + 20px);
+  padding-top: 183px;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  z-index: 4;
+  translate: 0 -120%;
+  background-image: url("../public/img/header/menu_bg.png");
+  background-size: cover;
+
+  transition: all 500ms ease;
+
+  .menu__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-size: 26px;
+    line-height: 105%;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.header__menu.visible {
+  top: -20px;
+  translate: 0;
 }

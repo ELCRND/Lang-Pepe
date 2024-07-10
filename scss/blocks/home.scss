@@ -3,6 +3,14 @@
   background-image: url("../public/img/home/home_bg.jpg");
   background-size: cover;
   position: relative;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    min-height: 710px;
+    background-image: url("../public/img/home/home_bg_mobile.png");
+    background-size: cover;
+    background-position: bottom;
+  }
 }
 
 .home__socials {
@@ -12,6 +20,13 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  @media screen and (max-width: 768px) {
+    right: 26px;
+    top: auto;
+    bottom: 30px;
+    flex-direction: row;
+  }
 
   a {
     border-radius: 10px;
@@ -24,6 +39,15 @@
     justify-content: center;
     align-items: center;
     transition: box-shadow 200ms ease;
+
+    @media screen and (max-width: 768px) {
+      width: 42px;
+      height: 39px;
+
+      svg {
+        scale: 0.8;
+      }
+    }
 
     &:hover {
       box-shadow: inset 2px -3px 6px 0 rgba(0, 0, 0, 0.4),
@@ -58,6 +82,17 @@
   border-radius: 20px;
   transition: box-shadow 80ms ease;
 
+  @media screen and (max-width: 1080px) {
+    width: 600px;
+    font-size: 48px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 340px;
+    height: 58px;
+    bottom: 94px;
+    font-size: 26px;
+  }
+
   &:active {
     box-shadow: 0 3px 16px 8px #000 inset;
     scale: 0.995;
@@ -69,6 +104,16 @@
     top: 0;
     left: 0;
     translate: -50% -50%;
+
+    @media screen and (max-width: 1080px) {
+      content: url("../public/img/home/home_decoration_2.png");
+      scale: 0.7;
+      translate: -40% -54%;
+    }
+    @media screen and (max-width: 768px) {
+      scale: 0.3;
+      translate: -43% -51%;
+    }
   }
   &::after {
     content: url("../public/img/home/home_decoration_2.png");
@@ -76,5 +121,43 @@
     top: 0;
     right: 0;
     translate: 37% -60%;
+
+    @media screen and (max-width: 1080px) {
+      content: url("../public/img/home/home_decoration_1.png");
+      scale: 0.7;
+      translate: 37% -50%;
+    }
+    @media screen and (max-width: 768px) {
+      scale: 0.3;
+      translate: 44% -50%;
+    }
+  }
+}
+
+.home__buy {
+  width: 127px;
+  height: 48px;
+  position: absolute;
+  border-radius: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 2px -3px 10px 0 rgba(0, 0, 0, 0.4),
+    inset -3px 4px 5px 0 rgba(0, 0, 0, 0.1);
+  background: #fff;
+  font-size: 16px;
+  line-height: 105%;
+  text-transform: uppercase;
+  color: #000;
+  transition: background-color 200ms ease;
+
+  &:hover {
+    background: #ccc;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    bottom: 26px;
+    left: 21px;
   }
 }

@@ -1,28 +1,63 @@
 .tokenomics {
   padding-top: 110px;
   padding-bottom: 140px;
+  position: relative;
+  top: -6px;
   background-image: url("../public/img/common_bg_dark.png");
   background-size: cover;
   background-position: center;
+  overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 40px;
+  }
 }
 
 .tokenomics__container {
-  width: min(1270px, 100%);
+  width: min(1310px, 100%);
   margin-left: auto;
   margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
   text-transform: uppercase;
+  position: relative;
+
+  @media screen and (max-width: 1080px) {
+    position: static;
+  }
 }
 
 .tokenomics__title {
   margin-bottom: 63px;
   font-size: 60px;
   line-height: 105%;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 30px;
+    font-size: 42px;
+  }
 }
 
 .tokenomics__statistics {
   margin-bottom: 128px;
   display: flex;
   gap: 8px;
+
+  @media screen and (max-width: 1080px) {
+    margin-bottom: 55px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(317px, 1fr));
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    gap: 10px;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
 }
 
 .presale,
@@ -30,28 +65,43 @@
 .marketing,
 .liquidity {
   width: 25%;
-  padding: 25px 30px;
   min-height: 208px;
+  padding: 25px 30px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.065);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 1080px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    min-width: 259px;
+    min-height: 174px;
+    padding: 20px 23px;
+  }
 
   h3 {
     font-size: 26px;
     line-height: 105%;
+
+    @media screen and (max-width: 768px) {
+      font-size: 22px;
+    }
   }
 
   span {
     font-size: 60px;
     line-height: 105%;
+
+    @media screen and (max-width: 768px) {
+      font-size: 46px;
+    }
   }
 }
 
 .tokenomics__bottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -59,6 +109,11 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
+  @media screen and (max-width: 1080px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .code__key {
     position: relative;
@@ -71,10 +126,20 @@
       top: 50%;
       left: 0;
       translate: 0 -50%;
+      word-break: break-all;
+
+      @media screen and (max-width: 768px) {
+        position: relative;
+        font-size: 18px;
+      }
     }
 
     .code__bg {
       mix-blend-mode: soft-light;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
     }
   }
 
@@ -87,27 +152,58 @@
       top: 50%;
       left: 50%;
       translate: -50% -50%;
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+        top: 0;
+        translate: -50% 50%;
+      }
     }
-    .code__bg {
+    .copy__bg {
       mix-blend-mode: overlay;
+
+      @media screen and (max-width: 768px) {
+        translate: 0 -20%;
+      }
     }
   }
 }
 
 .tokenomics__total {
+  position: absolute;
+  right: 100px;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 1080px) {
+    right: 42%;
+    bottom: 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    right: 50%;
+    translate: 33% 0;
+  }
 
   .total__text {
     font-size: 36px;
     line-height: 105%;
     color: rgba(255, 255, 255, 0.6);
+
+    @media screen and (max-width: 768px) {
+      font-size: 26px;
+    }
   }
 
   .total__num {
     font-size: 44px;
     line-height: 105%;
     position: relative;
+    text-wrap: nowrap;
+
+    @media screen and (max-width: 768px) {
+      font-size: 42px;
+    }
 
     &::before {
       content: url("../public/img/tokenomics/total_bg.png");
@@ -118,6 +214,10 @@
       width: 100%;
       height: 100%;
       mix-blend-mode: soft-light;
+
+      @media screen and (max-width: 768px) {
+        scale: 0.85;
+      }
     }
 
     &::after {
