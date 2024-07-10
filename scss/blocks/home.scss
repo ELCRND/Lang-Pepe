@@ -22,7 +22,7 @@
   gap: 10px;
 
   @media screen and (max-width: 768px) {
-    right: 26px;
+    right: 20px;
     top: auto;
     bottom: 30px;
     flex-direction: row;
@@ -87,7 +87,7 @@
     font-size: 48px;
   }
   @media screen and (max-width: 768px) {
-    width: 340px;
+    width: calc(100% - 40px);
     height: 58px;
     bottom: 94px;
     font-size: 26px;
@@ -158,6 +158,6 @@
   @media screen and (max-width: 768px) {
     display: flex;
     bottom: 26px;
-    left: 21px;
+    left: 20px;
   }
 }
