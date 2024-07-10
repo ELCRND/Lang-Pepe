@@ -1331,6 +1331,7 @@ body {
   align-items: center;
   border: 1px solid transparent;
   transition: background-color 250ms ease, border-color 200ms ease;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   .footer__socials a {

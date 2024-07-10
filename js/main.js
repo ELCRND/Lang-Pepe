@@ -21,13 +21,6 @@ document.querySelectorAll(".menu__link").forEach((link) =>
   })
 );
 
-faqBtns.forEach((btn) =>
-  btn.addEventListener("click", (e) => {
-    e.target.parentNode.classList.toggle("open");
-    e.target.classList.toggle("open");
-  })
-);
-
 // переключение контента в блоке about
 toggleBtns.forEach((btn) =>
   btn.addEventListener("click", (e) => {
