@@ -2,8 +2,8 @@
 // const menu = document.querySelector(".header__menu");
 const toggleBtns = document.querySelectorAll(".toggler__btn");
 const personsInfo = document.querySelectorAll(".person");
-// const key = document.querySelector("#key");
-// const tooltip = document.querySelector(".tokenomics__tooltip");
+const key = document.querySelector("#key");
+const tooltip = document.querySelector(".tooltip");
 
 // открыть/закрыть меню
 // menuBtn.addEventListener("click", () => {
@@ -37,8 +37,8 @@ toggleBtns.forEach((btn) =>
 );
 
 // копирование кода в буфер обмена
-// document.querySelector("#key-copy").addEventListener("click", () => {
-//   navigator.clipboard.writeText(key.getAttribute("data-key"));
-//   tooltip.classList.add("visible");
-//   setTimeout(() => tooltip.classList.remove("visible"), 400);
-// });
+document.querySelector("#copy").addEventListener("click", () => {
+  navigator.clipboard.writeText(key.innerText);
+  tooltip.classList.add("visible");
+  setTimeout(() => tooltip.classList.remove("visible"), 400);
+});

@@ -1,170 +1,68 @@
 .roadmap {
-  min-height: 960px;
-  padding-top: 150px;
-  padding-bottom: 170px;
-  padding-left: 316px;
-  color: var(--white);
-  text-transform: uppercase;
+  padding-top: 110px;
+  padding-bottom: 117px;
   position: relative;
-  overflow: hidden;
-  @media screen and (max-width: 1280px) {
-    padding-left: 20px;
-  }
-  @media screen and (max-width: 768px) {
-    min-height: 594px;
-    padding-top: 50px;
-    padding-bottom: 60px;
-  }
-
-  .application {
-    min-width: 515px;
-    min-height: 527px;
-    padding: 37px 40px;
-    border-radius: 30px;
-    background-color: #111;
-    background-image: url("../public/img/roadmap/application_bg.png");
-    background-repeat: no-repeat;
-    background-position: left bottom;
-
-    @media screen and (max-width: 768px) {
-      min-width: 325px;
-      min-height: 421px;
-      padding: 25px 30px;
-      background-image: url("../public/img/roadmap/application_bg_mobile.png");
-    }
-
-    .application__title {
-      margin-bottom: 213px;
-      font-size: 42px;
-      line-height: 105%;
-      @media screen and (max-width: 768px) {
-        margin-bottom: 35px;
-        font-size: 32px;
-      }
-    }
-
-    .application__feauteres {
-      width: fit-content;
-      margin-left: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
-      @media screen and (max-width: 768px) {
-        margin: 30px;
-      }
-
-      li {
-        display: flex;
-        align-items: center;
-        position: relative;
-        z-index: 0;
-        ::before {
-          content: url("../public/img/roadmap/mark.png");
-          position: absolute;
-          top: -5px;
-          left: -33px;
-          z-index: -1;
-        }
-      }
-    }
-  }
+  top: -6px;
+  background-image: url("../public/img/common_bg_light.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-.application:nth-child(2) {
-  li:nth-child(3),
-  li:nth-child(4) {
-    ::before {
-      content: url("../public/img/roadmap/mark_disabled.png");
-    }
-  }
-}
-.application:nth-child(3) {
-  li:nth-child(1n) {
-    ::before {
-      content: url("../public/img/roadmap/mark_disabled.png");
-    }
-  }
+.roadmap__container {
+  width: min(1270px, 100%);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .roadmap__title {
-  width: 100%;
+  margin-bottom: 47px;
   font-size: 60px;
   line-height: 105%;
-  @media screen and (max-width: 768px) {
-    font-size: 34px;
-  }
+  text-transform: uppercase;
 }
 
-.roadmap__swiper {
-  margin-top: 50px;
-  overflow: hidden;
-  @media screen and (max-width: 768px) {
-    margin-top: 27px;
-    padding-right: 20px;
-  }
-}
-
-.swiper-wrapper {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-}
-
-.swiper-navigation {
+.roadmap__schedule {
   display: flex;
-  gap: 18px;
-  position: absolute;
-  top: 154px;
-  right: 316px;
-  @media screen and (max-width: 768px) {
-    top: 48px;
-    right: 20px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.schedule__item {
+  padding: 36px 40px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.05);
+
+  div {
+    display: flex;
+    gap: 60px;
+
+    span {
+      padding-left: 30px;
+      font-family: var(--second-family);
+      font-size: 20px;
+      line-height: 105%;
+      position: relative;
+      z-index: 1;
+      &::before {
+        content: url("../public/img/roadmap/roadmap_mark.png");
+        position: absolute;
+        top: -25%;
+        left: 0;
+        z-index: -1;
+      }
+    }
+    span.not-done {
+      &::before {
+        content: url("../public/img/roadmap/roadmap_mark.png");
+        opacity: 0.4;
+      }
+    }
   }
 }
 
-.swiper-navigation-next,
-.swiper-navigation-prev {
-  width: 51px;
-  height: 51px;
-  border-radius: 50%;
-  background-color: #474747;
-  transition: background-color 250ms ease, filter 250ms ease;
-
-  &:hover {
-    background-color: var(--green);
-  }
-
-  &:active {
-    filter: brightness(0.8);
-  }
-}
-
-.swiper-navigation-next {
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -75% -50%;
-    width: 15px;
-    height: 15px;
-    border-bottom: 3px solid #fff;
-    border-left: 3px solid #fff;
-    rotate: 225deg;
-  }
-}
-.swiper-navigation-prev {
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -25% -50%;
-    width: 15px;
-    height: 15px;
-    border-bottom: 3px solid #fff;
-    border-left: 3px solid #fff;
-    rotate: 45deg;
-  }
+.schedule__title {
+  margin-bottom: 45px;
+  font-size: 42px;
+  line-height: 105%;
+  text-transform: uppercase;
 }

@@ -1,58 +1,33 @@
 .buy {
-  min-height: 818px;
-  padding-top: 50px;
-  padding-bottom: 148px;
-  background: linear-gradient(180deg, rgb(49, 137, 17), rgb(20, 63, 4) 86.5%);
+  padding-bottom: 210px;
   position: relative;
-  color: var(--white);
-  text-transform: uppercase;
-  @media screen and (max-width: 768px) {
-    min-height: 914px;
-    padding-top: 20px;
-    padding-bottom: 0;
-  }
+  background-image: url("../public/img/common_bg_dark.png");
+  background-size: cover;
+  background-position: center;
+}
 
-  &::before {
-    content: url("../public/img/buy/buy_stroke.png");
-    position: absolute;
-    top: 168px;
-    right: 0;
-    mix-blend-mode: overlay;
-
-    @media screen and (max-width: 768px) {
-      content: url("../public/img/buy/buy_stroke_mobile.png");
-      top: auto;
-      bottom: 0;
-    }
-  }
-
-  &::after {
-    content: url("../public/img/buy/buy_img.png");
-    position: absolute;
-    top: -67px;
-    right: 0;
-    @media screen and (max-width: 768px) {
-      content: url("../public/img/buy/buy_img_mobile.png");
-      top: auto;
-      bottom: -6px;
-    }
-  }
+.buy__container {
+  width: min(1270px, 100%);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .buy__title {
+  padding-top: 146px;
   font-size: 60px;
   line-height: 105%;
-  @media screen and (max-width: 768px) {
-    font-size: 34px;
-  }
+  text-transform: uppercase;
 }
 
-.buy__subitle {
+.buy__wrap {
+  display: flex;
+}
+
+.buy__subtitle {
+  font-weight: 400;
   font-size: 24px;
   line-height: 105%;
-  @media screen and (max-width: 768px) {
-    font-size: 16px;
-  }
+  text-transform: uppercase;
 }
 
 .buy__steps {
@@ -61,55 +36,48 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  @media screen and (max-width: 768px) {
-    margin-top: 31px;
-    gap: 30px;
-  }
-}
-
-.step__title {
-  margin-bottom: 7px;
-  padding-left: 32px;
-  font-size: 26px;
-  line-height: 105%;
-  position: relative;
-  @media screen and (max-width: 768px) {
-    padding-left: 20px;
-    font-size: 22px;
-  }
-
-  &::before {
-    content: url("../public/img/buy/buy_mark.png");
-    position: absolute;
-    top: -4px;
-    left: 0;
-    mix-blend-mode: overlay;
-    @media screen and (max-width: 768px) {
-      left: -10px;
-    }
-  }
 }
 
 .step__text {
+  display: block;
+  font-size: 26px;
+  line-height: 105%;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.step__accent {
   font-size: 22px;
-  line-height: 125%;
+  line-height: 105%;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
-  @media screen and (max-width: 768px) {
-    font-size: 16px;
+}
+
+.step__link {
+  font-size: 22px;
+  line-height: 105%;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+
+  img {
+    mix-blend-mode: overlay;
+    position: absolute;
+    translate: -90% 40%;
+    filter: brightness(1.2);
   }
 }
 
-.step__text-accent {
-  position: relative;
-  color: rgba(255, 255, 255, 0.9);
+.step__mark {
+  position: absolute;
+  left: -30px;
+  mix-blend-mode: overlay;
+  filter: brightness(1.2);
+}
 
-  &::before {
-    content: url("../public/img/buy/buy_accent_bg.png");
+.buy__right {
+  .buy__img {
     position: absolute;
-    bottom: -9px;
-    mix-blend-mode: overlay;
-    @media screen and (max-width: 768px) {
-      content: url("../public/img/buy/buy_accent_mobile.png");
-    }
+    top: 0;
   }
 }
